@@ -1,0 +1,7 @@
+#!/bin/python
+
+template = open('template.gcode').read()
+
+for temperature in range(160, 215, 5):
+    with open(f'stringingtest-{temperature}.gcode', 'w') as f:
+        f.write(template.replace('TRIAL_TEMP', str(temperature)))
